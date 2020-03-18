@@ -7,12 +7,62 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/questionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="16dp"
+        android:text="De quel Pays s'agit il ?"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/argentineImageView"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/questionTextView"
+        app:layout_constraintStart_toStartOf="@+id/questionTextView"
+        app:layout_constraintTop_toBottomOf="@+id/questionTextView"
+        app:srcCompat="@drawable/flag_argentine" />
+
+    <RadioButton
+        android:id="@+id/premierRadioButton"
+        android:layout_width="141dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:text="premierSoluce"
+        app:layout_constraintEnd_toEndOf="@+id/argentineImageView"
+        app:layout_constraintStart_toStartOf="@+id/argentineImageView"
+        app:layout_constraintTop_toBottomOf="@+id/argentineImageView" />
+
+    <RadioButton
+        android:id="@+id/secondRadioButton"
+        android:layout_width="143dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:text="secondSoluce"
+        app:layout_constraintEnd_toEndOf="@+id/premierRadioButton"
+        app:layout_constraintStart_toStartOf="@+id/premierRadioButton"
+        app:layout_constraintTop_toBottomOf="@+id/premierRadioButton" />
+
+    <RadioButton
+        android:id="@+id/troisiemeRadioButton"
+        android:layout_width="150dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="8dp"
+        android:text="troisiemeSoluce"
+        app:layout_constraintEnd_toEndOf="@+id/secondRadioButton"
+        app:layout_constraintStart_toStartOf="@+id/secondRadioButton"
+        app:layout_constraintTop_toBottomOf="@+id/secondRadioButton" />
+
+    <Button
+        android:id="@+id/validationButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Valider la réponse"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
