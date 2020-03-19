@@ -40,10 +40,10 @@
         android:id="@+id/goodAnswerTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="La bonne réponse est :"
         app:layout_constraintBottom_toTopOf="@+id/validationButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="CorrectAnswer" />
 
     <RadioGroup
         android:id="@+id/mainRadioGroup"
@@ -77,9 +77,9 @@
         android:id="@+id/resultTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/goodAnswerTextView"
         app:layout_constraintEnd_toEndOf="@+id/mainRadioGroup"
         app:layout_constraintStart_toStartOf="@+id/mainRadioGroup"
-        app:layout_constraintTop_toBottomOf="@+id/mainRadioGroup" />
+        app:layout_constraintTop_toBottomOf="@+id/mainRadioGroup"
+        tools:text="ValidationAnswer" />
 </androidx.constraintlayout.widget.ConstraintLayout>

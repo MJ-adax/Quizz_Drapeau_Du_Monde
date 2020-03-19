@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 
 public class Question implements Parcelable {
+
     private final int flagCountry;
     private final ArrayList<String> answers;
     private final String correctAnswer;
