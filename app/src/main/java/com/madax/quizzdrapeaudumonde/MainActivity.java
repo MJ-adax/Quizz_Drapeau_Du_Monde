@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         // TODO : verify if correct answer with an .equals()
         // TODO : setText on validation button + add counter to check if show the answer or next step
 
-        Button validationButton = findViewById(R.id.validationButton);
+        final Button validationButton = findViewById(R.id.validationButton);
         validationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,19 +67,22 @@ public class MainActivity extends AppCompatActivity {
                 RadioButton selectedRadioButton = findViewById(selectedIDRadioButton);
 
                 try {
-                    if (currentQuestion.getCorrectAnswer().equals(selectedRadioButton.getText())) {
-                        resultTextView.setText("Bonne réponse !!!!!!");
-                        goodAnswerTextView.setText("La bonne réponse est " + currentQuestion.getCorrectAnswer());
-                    } else {
-                        resultTextView.setText("Tes nul bouuuuuuuuuuuh");
-                        goodAnswerTextView.setText("La bonne réponse est " + currentQuestion.getCorrectAnswer());
+                    if (validationButton.getText().equals("Valider la réponse")) {
+                        if (currentQuestion.getCorrectAnswer().equals(selectedRadioButton.getText())) {
+                            resultTextView.setText("Bonne réponse !!!!!!");
+                            goodAnswerTextView.setText("La bonne réponse est " + currentQuestion.getCorrectAnswer());
+                        } else {
+                            resultTextView.setText("Tes nul bouuuuuuuuuuuh");
+                            goodAnswerTextView.setText("La bonne réponse est " + currentQuestion.getCorrectAnswer());
+                        }
+                        validationButton.setText("Question Suivante");
                     }
-
-                    Intent intent = new Intent(MainActivity.this, MainActivity.class);
-                    intent.putExtra("listQuestions", listQuestions);
-                    intent.putExtra("indexQuestion", indexQuestion+1);
-                    startActivity(intent);
-
+                    else {
+                        Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                        intent.putExtra("listQuestions", listQuestions);
+                        intent.putExtra("indexQuestion", indexQuestion+1);
+                        startActivity(intent);
+                    }
                 } catch (NullPointerException npe) {
                     Log.e("MainActivity", "NPE -> pas de reponse selectionné");
                     Toast.makeText(MainActivity.this, "Choisis un pays ducon !", Toast.LENGTH_SHORT).show();
