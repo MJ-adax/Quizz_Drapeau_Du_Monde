@@ -27,36 +27,6 @@
         app:layout_constraintTop_toBottomOf="@+id/questionTextView"
         app:srcCompat="@drawable/flag_argentine" />
 
-    <RadioButton
-        android:id="@+id/premierRadioButton"
-        android:layout_width="141dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="8dp"
-        android:text="premierSoluce"
-        app:layout_constraintEnd_toEndOf="@+id/argentineImageView"
-        app:layout_constraintStart_toStartOf="@+id/argentineImageView"
-        app:layout_constraintTop_toBottomOf="@+id/argentineImageView" />
-
-    <RadioButton
-        android:id="@+id/secondRadioButton"
-        android:layout_width="143dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="8dp"
-        android:text="secondSoluce"
-        app:layout_constraintEnd_toEndOf="@+id/premierRadioButton"
-        app:layout_constraintStart_toStartOf="@+id/premierRadioButton"
-        app:layout_constraintTop_toBottomOf="@+id/premierRadioButton" />
-
-    <RadioButton
-        android:id="@+id/troisiemeRadioButton"
-        android:layout_width="150dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="8dp"
-        android:text="troisiemeSoluce"
-        app:layout_constraintEnd_toEndOf="@+id/secondRadioButton"
-        app:layout_constraintStart_toStartOf="@+id/secondRadioButton"
-        app:layout_constraintTop_toBottomOf="@+id/secondRadioButton" />
-
     <Button
         android:id="@+id/validationButton"
         android:layout_width="0dp"
@@ -65,4 +35,51 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/goodAnswerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="La bonne réponse est :"
+        app:layout_constraintBottom_toTopOf="@+id/validationButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/mainRadioGroup"
+        android:layout_width="193dp"
+        android:layout_height="147dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="@+id/argentineImageView"
+        app:layout_constraintStart_toStartOf="@+id/argentineImageView"
+        app:layout_constraintTop_toBottomOf="@+id/argentineImageView">
+
+        <RadioButton
+            android:id="@+id/firstRadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Argentine" />
+
+        <RadioButton
+            android:id="@+id/secondRadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chili" />
+
+        <RadioButton
+            android:id="@+id/thirdRadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bresil" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/resultTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/goodAnswerTextView"
+        app:layout_constraintEnd_toEndOf="@+id/mainRadioGroup"
+        app:layout_constraintStart_toStartOf="@+id/mainRadioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/mainRadioGroup" />
 </androidx.constraintlayout.widget.ConstraintLayout>
