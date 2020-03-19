@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/argentineImageView"
+        android:id="@+id/defaultImageView"
         android:layout_width="200dp"
         android:layout_height="150dp"
         android:layout_marginTop="8dp"
@@ -50,9 +50,9 @@
         android:layout_width="193dp"
         android:layout_height="147dp"
         android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="@+id/argentineImageView"
-        app:layout_constraintStart_toStartOf="@+id/argentineImageView"
-        app:layout_constraintTop_toBottomOf="@+id/argentineImageView">
+        app:layout_constraintEnd_toEndOf="@+id/defaultImageView"
+        app:layout_constraintStart_toStartOf="@+id/defaultImageView"
+        app:layout_constraintTop_toBottomOf="@+id/defaultImageView">
 
         <RadioButton
             android:id="@+id/firstRadioButton"

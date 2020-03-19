@@ -6,14 +6,14 @@ import android.os.Parcelable;
 import java.util.ArrayList;
 
 
-public class Questions implements Parcelable {
+public class Question implements Parcelable {
     private final int flagCountry;
     private final ArrayList<String> answers;
     private final String correctAnswer;
     private final String difficulty;
 
 
-    protected Questions(Parcel in) {
+    protected Question(Parcel in) {
         flagCountry = in.readInt();
         answers = in.createStringArrayList();
         correctAnswer = in.readString();
@@ -33,15 +33,15 @@ public class Questions implements Parcelable {
         return 0;
     }
 
-    public static final Creator<Questions> CREATOR = new Creator<Questions>() {
+    public static final Creator<Question> CREATOR = new Creator<Question>() {
         @Override
-        public Questions createFromParcel(Parcel in) {
-            return new Questions(in);
+        public Question createFromParcel(Parcel in) {
+            return new Question(in);
         }
 
         @Override
-        public Questions[] newArray(int size) {
-            return new Questions[size];
+        public Question[] newArray(int size) {
+            return new Question[size];
         }
     };
 
@@ -63,7 +63,7 @@ public class Questions implements Parcelable {
     }
 
     // Constructor
-    public Questions(int flagCountry, ArrayList<String> answers, String correctAnswer, String difficulty) {
+    public Question(int flagCountry, ArrayList<String> answers, String correctAnswer, String difficulty) {
         this.flagCountry = flagCountry;
         this.answers = answers;
         this.correctAnswer = correctAnswer;
