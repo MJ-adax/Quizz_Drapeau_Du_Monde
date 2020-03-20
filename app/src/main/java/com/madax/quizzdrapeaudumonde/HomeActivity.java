@@ -120,8 +120,10 @@ public class HomeActivity extends AppCompatActivity {
         Question q13 = new Question(R.drawable.flag_roumanie, answers13, "Roumanie", "hard");
         listQuestions.add(q13);
 
+        // Randomize my list of questions
         Collections.shuffle(listQuestions);
 
+        // Navigation to MainActivity + send listQuestions ans indexQuestion
         Button beginButton = findViewById(R.id.beginQuizzButton);
         beginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,11 +132,10 @@ public class HomeActivity extends AppCompatActivity {
                 intent.putExtra("listQuestions", listQuestions);
                 intent.putExtra("indexQuestion", 0);
                 startActivity(intent);
-
-                /* then need to charge a random question from my listQuestion */
             }
         });
 
+        // Navigation to AboutActivity
         Button aboutButton = findViewById(R.id.aboutButton);
         aboutButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -144,6 +145,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        // Navigation to QuestionListActivity + send listQuestions
         Button listQuestionsButton = findViewById(R.id.listQuestionsButton);
         listQuestionsButton.setOnClickListener(new View.OnClickListener() {
             @Override

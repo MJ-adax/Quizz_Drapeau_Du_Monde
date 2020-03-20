@@ -5,7 +5,7 @@ import android.os.Parcelable;
 
 import java.util.ArrayList;
 
-
+// Class Question to configure informations of my questions
 public class Question implements Parcelable {
 
     private final int flagCountry;

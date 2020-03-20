@@ -21,9 +21,10 @@ public class QuestionListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_list);
 
+        // Get the informations send from the HomeActivity
         Intent srcIntent = getIntent();
         questions = srcIntent.getParcelableArrayListExtra("listQuestions");
-
+        // Configure the adpater with the list of questions
         adapter = new QuestionAdapter(questions);
 
         RecyclerView recyclerView = findViewById(R.id.recylerView);
@@ -31,6 +32,7 @@ public class QuestionListActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
+    // If button back is pressed, go back to the HomeActivity
     @Override
     public void onBackPressed() {
         super.onBackPressed();

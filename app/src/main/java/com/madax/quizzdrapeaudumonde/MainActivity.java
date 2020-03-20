@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Get informations send from HomeActivity
         Intent srcIntent = getIntent();
         listQuestions = srcIntent.getParcelableArrayListExtra("listQuestions");
         indexQuestion = srcIntent.getIntExtra("indexQuestion", 0);
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         ImageView myImageView = findViewById(R.id.defaultImageView);
         myImageView.setImageResource(currentQuestion.getFlagCountry());
 
+        // Randomize answers + set answers in my buttons
         Collections.shuffle(currentQuestion.getAnswers());
         final RadioButton firstChoice = findViewById(R.id.firstRadioButton);
         firstChoice.setText(currentQuestion.getAnswers().get(0));
@@ -47,18 +49,17 @@ public class MainActivity extends AppCompatActivity {
         final RadioButton thirdChoice = findViewById(R.id.thirdRadioButton);
         thirdChoice.setText(currentQuestion.getAnswers().get(2));
 
+        // Handle the current step of the quizz
         final TextView stepTextView = findViewById(R.id.stepTextView);
         stepTextView.setText("Etape : " + (indexQuestion+1) + " / 6");
 
+        // Check answer selected and the correct answer for the current question
         final Button validationButton = findViewById(R.id.validationButton);
         validationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 TextView resultTextView = findViewById(R.id.resultTextView);
                 TextView goodAnswerTextView = findViewById(R.id.goodAnswerTextView);
-
                 RadioGroup mainRadioGroup = findViewById(R.id.mainRadioGroup);
                 int selectedIDRadioButton = mainRadioGroup.getCheckedRadioButtonId();
                 RadioButton selectedRadioButton = findViewById(selectedIDRadioButton);
@@ -74,8 +75,7 @@ public class MainActivity extends AppCompatActivity {
                             resultTextView.setText("Tes nul bouuuuuuuuuuuh");
                             goodAnswerTextView.setText("La bonne réponse est " + currentQuestion.getCorrectAnswer());
                         }
-
-                        Log.i("MainActivity", "index = " + indexQuestion);
+                        // Change text of the validation button according to indexQuestion
                         if (indexQuestion == 5) {
                             validationButton.setText("Resultats");
                         }
@@ -83,11 +83,13 @@ public class MainActivity extends AppCompatActivity {
                             validationButton.setText("Question Suivante");
                         }
                     }
+                    // Check if the quizz is finished and send score to the StatActivity
                     else if (validationButton.getText().equals("Resultats")) {
                         Intent intent = new Intent(MainActivity.this, StatsActivity.class);
                         intent.putExtra("countGoodAnswers", countGoodAnswers);
                         startActivity(intent);
                     }
+                    // Send : a new random flashcard while increment the indexQuestion and the current score of the user
                     else {
                         Intent intent = new Intent(MainActivity.this, MainActivity.class);
                         intent.putExtra("listQuestions", listQuestions);
@@ -95,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
                         intent.putExtra("countGoodAnswers", countGoodAnswers);
                         startActivity(intent);
                     }
+                // Exception if the user didn't select any answer, prevent of crash
                 } catch (NullPointerException npe) {
                     Log.e("MainActivity", "NPE -> pas de reponse selectionné");
                     Toast.makeText(MainActivity.this, "Choisis un pays ducon !", Toast.LENGTH_SHORT).show();
@@ -102,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    // If button back is pressed, go back to the HomeActivity
     @Override
     public void onBackPressed() {
         super.onBackPressed();

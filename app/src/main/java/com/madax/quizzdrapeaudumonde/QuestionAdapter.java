@@ -1,8 +1,5 @@
 package com.madax.quizzdrapeaudumonde;
 
-import android.content.Context;
-import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +8,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.List;
 
 public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHolder> {
@@ -54,7 +50,7 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            // Recuperation du composant graphique dans itemView (itemView = mon item_question)
+            // Get graphic component in itemView (itemView = mon item_question)
             flag = itemView.findViewById(R.id.flagImageView);
             country = itemView.findViewById(R.id.countryTextView);
             answers = itemView.findViewById(R.id.answersTextView);
