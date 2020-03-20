@@ -44,20 +44,11 @@ public class MainActivity extends AppCompatActivity {
         final RadioButton thirdChoice = findViewById(R.id.thirdRadioButton);
         thirdChoice.setText(currentQuestion.getAnswers().get(2));
 
-        Log.v("MainActivity", String.valueOf(currentQuestion.getAnswers().get(0)));
-        Log.v("MainActivity", String.valueOf(currentQuestion.getAnswers().get(1)));
-        Log.v("MainActivity", String.valueOf(currentQuestion.getAnswers().get(2)));
-        Log.v("MainActivity", String.valueOf(currentQuestion.getCorrectAnswer()));
-
-
-
-        // TODO : verify if correct answer with an .equals()
-        // TODO : setText on validation button + add counter to check if show the answer or next step
-
         final Button validationButton = findViewById(R.id.validationButton);
         validationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
 
                 TextView resultTextView = findViewById(R.id.resultTextView);
                 TextView goodAnswerTextView = findViewById(R.id.goodAnswerTextView);
@@ -75,7 +66,18 @@ public class MainActivity extends AppCompatActivity {
                             resultTextView.setText("Tes nul bouuuuuuuuuuuh");
                             goodAnswerTextView.setText("La bonne réponse est " + currentQuestion.getCorrectAnswer());
                         }
-                        validationButton.setText("Question Suivante");
+
+                        Log.i("MainActivity", "index = " + indexQuestion);
+                        if (indexQuestion == 5) {
+                            validationButton.setText("Resultats");
+                        }
+                        else {
+                            validationButton.setText("Question Suivante");
+                        }
+                    }
+                    else if (validationButton.getText().equals("Resultats")) {
+                        Intent intent = new Intent(MainActivity.this, StatsActivity.class);
+                        startActivity(intent);
                     }
                     else {
                         Intent intent = new Intent(MainActivity.this, MainActivity.class);
