@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         indexQuestion = srcIntent.getIntExtra("indexQuestion", 0);
         countGoodAnswers = srcIntent.getIntExtra("countGoodAnswers", 0);
 
+
         currentQuestion = (Question) listQuestions.get(indexQuestion);
 
         //TODO : use shuffle() to randomize answers
@@ -46,6 +47,9 @@ public class MainActivity extends AppCompatActivity {
         secondChoice.setText(currentQuestion.getAnswers().get(1));
         final RadioButton thirdChoice = findViewById(R.id.thirdRadioButton);
         thirdChoice.setText(currentQuestion.getAnswers().get(2));
+
+        final TextView stepTextView = findViewById(R.id.stepTextView);
+        stepTextView.setText("Etape : " + (indexQuestion+1) + " / 6");
 
         final Button validationButton = findViewById(R.id.validationButton);
         validationButton.setOnClickListener(new View.OnClickListener() {
