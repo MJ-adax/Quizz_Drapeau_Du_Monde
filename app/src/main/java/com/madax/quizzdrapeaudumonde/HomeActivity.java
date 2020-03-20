@@ -63,9 +63,64 @@ public class HomeActivity extends AppCompatActivity {
         answers5.add("Grece");
         Question q5 = new Question(R.drawable.flag_grece, answers5, "Grece", "hard");
         listQuestions.add(q5);
+        // Seventh Question //
+        ArrayList<String> answers6 = new ArrayList<>();
+        answers6.add("France");
+        answers6.add("Tunisie");
+        answers6.add("Pays-Bas");
+        Question q6 = new Question(R.drawable.flag_france, answers6, "France", "easy");
+        listQuestions.add(q6);
+        // Eighth Question //
+        ArrayList<String> answers7 = new ArrayList<>();
+        answers7.add("Paraguay");
+        answers7.add("Bolivie");
+        answers7.add("Colombie");
+        Question q7 = new Question(R.drawable.flag_bolivie, answers7, "Bolivie", "hard");
+        listQuestions.add(q7);
+        // Nineth Question //
+        ArrayList<String> answers8 = new ArrayList<>();
+        answers8.add("Mali");
+        answers8.add("Jamaique");
+        answers8.add("Togo");
+        Question q8 = new Question(R.drawable.flag_mali, answers8, "Mali", "hard");
+        listQuestions.add(q8);
+        // Tenth Question //
+        ArrayList<String> answers9 = new ArrayList<>();
+        answers9.add("Tunisie");
+        answers9.add("Congo");
+        answers9.add("Cameroun");
+        Question q9 = new Question(R.drawable.flag_cameroun, answers9, "Cameroun", "hard");
+        listQuestions.add(q9);
+        // Eleventh Question //
+        ArrayList<String> answers10 = new ArrayList<>();
+        answers10.add("Pologne");
+        answers10.add("Lituanie");
+        answers10.add("Moldavie");
+        Question q10 = new Question(R.drawable.flag_moldavie, answers10, "Moldavie", "hard");
+        listQuestions.add(q10);
+        // Twelfth Question //
+        ArrayList<String> answers11 = new ArrayList<>();
+        answers11.add("Norvege");
+        answers11.add("Suede");
+        answers11.add("Finlande");
+        Question q11 = new Question(R.drawable.flag_norvege, answers11, "Norvege", "hard");
+        listQuestions.add(q11);
+        // Thirteenth Question //
+        ArrayList<String> answers12 = new ArrayList<>();
+        answers12.add("Paraguay");
+        answers12.add("Uruguay");
+        answers12.add("Perou");
+        Question q12 = new Question(R.drawable.flag_paraguay, answers12, "Paraguay", "hard");
+        listQuestions.add(q12);
+        // Fourteenth Question //
+        ArrayList<String> answers13 = new ArrayList<>();
+        answers13.add("Roumanie");
+        answers13.add("Slovenie");
+        answers13.add("Estonie");
+        Question q13 = new Question(R.drawable.flag_roumanie, answers13, "Roumanie", "hard");
+        listQuestions.add(q13);
 
         Collections.shuffle(listQuestions);
-
 
         Button beginButton = findViewById(R.id.beginQuizzButton);
         beginButton.setOnClickListener(new View.OnClickListener() {
