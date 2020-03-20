@@ -149,6 +149,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this, QuestionListActivity.class);
+                intent.putExtra("listQuestions", listQuestions);
                 startActivity(intent);
             }
         });
