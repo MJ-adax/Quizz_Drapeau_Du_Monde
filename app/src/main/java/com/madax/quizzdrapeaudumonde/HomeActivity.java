@@ -144,5 +144,14 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        Button listQuestionsButton = findViewById(R.id.listQuestionsButton);
+        listQuestionsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, QuestionListActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
