@@ -21,8 +21,8 @@
 
     <TextView
         android:id="@+id/scoreTextView"
-        android:layout_width="159dp"
-        android:layout_height="83dp"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
         android:text="/ 6"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toTopOf="@+id/percentTextView"
@@ -34,9 +34,9 @@
 
     <TextView
         android:id="@+id/percentTextView"
-        android:layout_width="212dp"
-        android:layout_height="63dp"
-        android:text="Pourcentage"
+        android:layout_width="65dp"
+        android:layout_height="60dp"
+        android:text="0%"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textView2"

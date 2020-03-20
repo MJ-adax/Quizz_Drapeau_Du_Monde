@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     public Question currentQuestion;
     private ArrayList<Question> listQuestions;
     private int indexQuestion;
+    private int countGoodAnswers;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         Intent srcIntent = getIntent();
         listQuestions = srcIntent.getParcelableArrayListExtra("listQuestions");
         indexQuestion = srcIntent.getIntExtra("indexQuestion", 0);
+        countGoodAnswers = srcIntent.getIntExtra("countGoodAnswers", 0);
 
         currentQuestion = (Question) listQuestions.get(indexQuestion);
 
@@ -62,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
                         if (currentQuestion.getCorrectAnswer().equals(selectedRadioButton.getText())) {
                             resultTextView.setText("Bonne réponse !!!!!!");
                             goodAnswerTextView.setText("La bonne réponse est " + currentQuestion.getCorrectAnswer());
+                            countGoodAnswers = countGoodAnswers +1;
+                            Log.i("MainActivity", "Bonnes Reponses : " + countGoodAnswers);
                         } else {
                             resultTextView.setText("Tes nul bouuuuuuuuuuuh");
                             goodAnswerTextView.setText("La bonne réponse est " + currentQuestion.getCorrectAnswer());
@@ -77,12 +82,14 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else if (validationButton.getText().equals("Resultats")) {
                         Intent intent = new Intent(MainActivity.this, StatsActivity.class);
+                        intent.putExtra("countGoodAnswers", countGoodAnswers);
                         startActivity(intent);
                     }
                     else {
                         Intent intent = new Intent(MainActivity.this, MainActivity.class);
                         intent.putExtra("listQuestions", listQuestions);
                         intent.putExtra("indexQuestion", indexQuestion+1);
+                        intent.putExtra("countGoodAnswers", countGoodAnswers);
                         startActivity(intent);
                     }
                 } catch (NullPointerException npe) {
