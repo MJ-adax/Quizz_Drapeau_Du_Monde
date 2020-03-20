@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutActivity">
+
+    <TextView
+        android:id="@+id/aboutTextView"
+        android:layout_width="177dp"
+        android:layout_height="46dp"
+        android:text="A PROPOS"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintBottom_toTopOf="@+id/nameTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Maxime JOULLIN"
+        app:layout_constraintBottom_toTopOf="@+id/versionTextView"
+        app:layout_constraintEnd_toEndOf="@+id/aboutTextView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/aboutTextView"
+        app:layout_constraintTop_toBottomOf="@+id/aboutTextView" />
+
+    <TextView
+        android:id="@+id/versionTextView"
+        android:layout_width="70dp"
+        android:layout_height="31dp"
+        android:text="v.1.1.0"
+        app:layout_constraintBottom_toTopOf="@+id/mailTextView"
+        app:layout_constraintEnd_toEndOf="@+id/aboutTextView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/aboutTextView"
+        app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
+
+    <TextView
+        android:id="@+id/mailTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="maximejoullin@gmail.com"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/aboutTextView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/aboutTextView"
+        app:layout_constraintTop_toBottomOf="@+id/versionTextView" />
+</androidx.constraintlayout.widget.ConstraintLayout>

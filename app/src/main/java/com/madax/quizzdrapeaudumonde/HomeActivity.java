@@ -80,7 +80,15 @@ public class HomeActivity extends AppCompatActivity {
                 /* then need to charge a random question from my listQuestion */
             }
         });
+
+        Button aboutButton = findViewById(R.id.aboutButton);
+        aboutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, AboutActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
-
-
 }
