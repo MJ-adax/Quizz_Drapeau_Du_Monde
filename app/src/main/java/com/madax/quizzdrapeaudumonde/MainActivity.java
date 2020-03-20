@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,14 +34,12 @@ public class MainActivity extends AppCompatActivity {
         indexQuestion = srcIntent.getIntExtra("indexQuestion", 0);
         countGoodAnswers = srcIntent.getIntExtra("countGoodAnswers", 0);
 
-
         currentQuestion = (Question) listQuestions.get(indexQuestion);
-
-        //TODO : use shuffle() to randomize answers
 
         ImageView myImageView = findViewById(R.id.defaultImageView);
         myImageView.setImageResource(currentQuestion.getFlagCountry());
 
+        Collections.shuffle(currentQuestion.getAnswers());
         final RadioButton firstChoice = findViewById(R.id.firstRadioButton);
         firstChoice.setText(currentQuestion.getAnswers().get(0));
         final RadioButton secondChoice = findViewById(R.id.secondRadioButton);
