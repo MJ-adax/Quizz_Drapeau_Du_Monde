@@ -30,6 +30,7 @@ public class QuestionListActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();
