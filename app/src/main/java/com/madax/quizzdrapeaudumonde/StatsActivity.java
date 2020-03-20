@@ -24,6 +24,12 @@ public class StatsActivity extends AppCompatActivity {
         TextView percentTextView = findViewById(R.id.percentTextView);
         percentTextView.setText((countGoodAnswers * 100)/6 + " %");
 
-        //TODO : If return, go back to HomeActivity
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(StatsActivity.this, HomeActivity.class));
+        finish();
     }
 }

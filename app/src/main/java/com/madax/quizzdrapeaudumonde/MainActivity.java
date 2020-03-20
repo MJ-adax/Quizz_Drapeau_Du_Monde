@@ -101,7 +101,11 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
-        // TODO: if return, go back to HomeActivity
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(MainActivity.this, HomeActivity.class));
+        finish();
     }
 }
